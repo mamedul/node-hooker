@@ -1,11 +1,13 @@
 {
   "name": "node-hooker",
-  "version": "2025.09.07-2",
+  "version": "2025.09.07-3",
   "description": "A powerful and flexible hook system for Node.js, inspired by the WordPress actions and filters API.",
   "files": [
     "./lib",
     "./dist",
     "./rollup.config.js",
+    "./test.js",
+    "./browser-test.html",
     "./LICENSE",
     "./CHANGELOG.md",
     "./README.md"

@@ -2,7 +2,7 @@
 
 A powerful and flexible **hook system** for **Node.js**, inspired by the **WordPress actions and filters** API. This package provides a simple yet effective way to create extensible and decoupled architectures in your JavaScript applications.
 
-[![Version](https://img.shields.io/badge/Version-2025.09.072-blue.svg)](https://github.com/mamedul/node-hooker/)
+[![Version](https://img.shields.io/badge/Version-2025.09.073-blue.svg)](https://github.com/mamedul/node-hooker/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mamedul/node-hooker/blob/main/LICENSE) &nbsp;&nbsp; [![GitHub stars](https://img.shields.io/github/stars/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/stargazers) &nbsp;&nbsp; [![GitHub forks](https://img.shields.io/github/forks/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/network/members) &nbsp;&nbsp; [![GitHub watchers](https://img.shields.io/github/watchers/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/watchers) &nbsp;&nbsp; [![GitHub followers](https://img.shields.io/github/followers/mamedul?style=social)](https://github.com/mamedul?tab=followers)
 [![Hire Me](https://img.shields.io/badge/Hire%20Me-Available-brightgreen.svg)](http://mamedul.github.io/)
 
@@ -30,9 +30,9 @@ _\[ It is designed to be cross-platform, supporting modern ES2015+ environments 
 
 You can install package via-
 
-✅ **1. npm install**
+### ✅ **npm install**
 
-This is the **standard** way to install any Node.js package.
+This is the **standard** way to install any Node.js package-
 
 ```bash
 npm install node-hooker
@@ -41,9 +41,9 @@ npm install node-hooker
 Or-
 
 
-✅ **2. Yarn**
+### ✅ **Yarn install**
 
-Yes — Yarn can install npm packages, because it uses the same npm registry under the hood ( Equivalent to `npm install node-hooker` ):
+Yes — Yarn can install npm packages because it uses the same npm registry under the hood (equivalent to `npm install node-hooker`)-
 
 ```bash
 yarn add node-hooker
@@ -51,15 +51,17 @@ yarn add node-hooker
 
 ---
 
-✅ **3. Test**
+### ✅ **Test**
 
-After install- you can then run your tests from the terminal simply by using the command:
+After installation, you can run tests from the terminal using-
 
 ```bash
 npm test
 ```
 
 ## Quick Start
+
+### ✅ NodeJS
 
 ```js
 const hooker = require('node-hooker');
@@ -94,11 +96,11 @@ console.log(title); // Output: HELLO WORLD
 ***OR***
 
 
-## Browser Usage (UMD)
+### ✅ Browser Usage (UMD)
 
 This library can be used directly in the browser. A UMD (Universal Module Definition) bundle is provided in the `dist` folder, which is also available via CDN.
 
-### 1\. Include via CDN
+#### 1\. Include via CDN
 
 You can add `node-hooker` to your project by including the following script tag. It's recommended to use the minified version for production.
 
@@ -110,7 +112,7 @@ You can add `node-hooker` to your project by including the following script tag.
 <script src="https://cdn.jsdelivr.net/npm/node-hooker/dist/node-hooker.umd.js"></script>
 ```
 
-### 2\. Example Usage
+#### 2\. Example Usage
 
 Once included, the library will be available under the global variable `Hooker`.
 
@@ -156,7 +158,18 @@ Once included, the library will be available under the global variable `Hooker`.
 
 ---
 
-## Preview (UMD)
+## Preview
+
+
+### ✅ NodeJS
+
+```bash
+node test.php
+```
+
+**OR**
+
+### ✅ Browser  (UMD)
 
 [▶ Open Live Preview](https://mamedul.ddns.net/node-hooker/browser-test.html)
 
@@ -202,12 +215,13 @@ Once included, the library will be available under the global variable `Hooker`.
 | `doing_action(hook = null)` | Check if a specific action (or any action) is currently running. |
 | `doing_filter(hook = null)` | Check if a specific filter (or any filter) is currently running. |
 
-## Advanced Usage: Custom Instances
+## Advanced Usage
+
+### ✅ Custom Instances
 
 While the singleton is convenient, you can create isolated instances of the `Hooker` class for separate event buses.
 
 ```js
-const { Hooker } = require('node-hooker');
 const myInstance = new Hooker();
 
 myInstance.add_action('my_hook', () => console.log('Hello from my instance!'));
@@ -228,6 +242,7 @@ node-hooker/
 │   └── node-hooker.umd.js
 │   └── node-hooker.umd.min.js
 ├── test.js
+├── browser-test.html
 ├── package.json
 ├── README.md
 └── CHANGELOG.md
@@ -235,18 +250,18 @@ node-hooker/
 
 ## License
 
-This extensible codes is licensed under the **MIT License**. Copyright (c) 2022 by [**Mamedul Islam**](https://mamedul.github.io/).
+This extensible codes is licensed under the **MIT License**. Copyright (c) 2025 by [**Mamedul Islam**](https://mamedul.github.io/).
 
 See the [LICENSE](https://opensource.org/licenses/MIT) file for more details.
 
 ---
 
-## 👨‍💻 Author & Hire Me
+## Author & Hire Me
 
 This extensible codes was created and is maintained by [**Mamedul Islam**](https://mamedul.github.io/).
 
 
-Me as a passionate **web developer** with experience in creating interactive and user-friendly web components. Currently *available for freelance projects* or full-time opportunities.
+As a passionate **web developer** with experience in creating interactive and user-friendly web components. Currently *available for freelance projects* or full-time opportunities.
 
 Helping businesses grow their online presence with custom web solutions. Specializing in **WordPress**, **WooCommerce**, and **Shopify**. Building modern, responsive, and high-performance scalable websites with custom made plugins, codes, customizations.
 
@@ -261,7 +276,7 @@ Helping businesses grow their online presence with custom web solutions. Special
 
 ---
 
-### ⭐ Show Your Support
+## Show Your Support
 
 If you find this extension useful, please consider giving it a star on GitHub! Your support helps motivate further development and improvements.
 
