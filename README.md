@@ -158,7 +158,8 @@ Once included, the library will be available under the global variable `Hooker`.
 
 ## Preview (UMD)
 
-<iframe src="./browser-test.html" width="100%" height="256px" style="border: 32px solid #e0e0e0;outline:2px solid #c0c0c0;"></iframe>
+[▶ Open Live Preview](https://mamedul.ddns.net/node-hooker/browser-test.html)
+
 
 ---
 
