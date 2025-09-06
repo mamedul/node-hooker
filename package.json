@@ -1,0 +1,31 @@
+{
+  "name": "node-hooker",
+  "version": "2025.9.6",
+  "description": "A powerful and flexible hook system for Node.js, inspired by the WordPress actions and filters API.",
+  "files": [
+    "./lib",
+    "./LICENSE",
+    "./CHANGELOG.md",
+    "./README.md"
+  ],
+  "main": "./lib/Hooker.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamedul/node-hooker.git"
+  },
+  "keywords": [
+    "hooks",
+    "actions",
+    "filters",
+    "events",
+    "wordpress",
+    "plugin",
+    "architecture",
+    "extensible"
+  ],
+  "author": "MAMEDUL ISLAM",
+  "license": "MIT"
+}
