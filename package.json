@@ -1,16 +1,20 @@
 {
   "name": "node-hooker",
-  "version": "2025.09.07",
+  "version": "2025.09.07.01",
   "description": "A powerful and flexible hook system for Node.js, inspired by the WordPress actions and filters API.",
   "files": [
     "./lib",
+    "./rollup.config.js",
     "./LICENSE",
     "./CHANGELOG.md",
     "./README.md"
   ],
   "main": "./lib/Hooker.js",
+  "browser": "./dist/node-hooker.umd.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "build": "rollup -c",
+    "build:minify": "NODE_ENV=production rollup -c"
   },
   "repository": {
     "type": "git",
@@ -27,5 +31,10 @@
     "extensible"
   ],
   "author": "MAMEDUL ISLAM",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "rollup": "^4.50.0"
+  }
 }

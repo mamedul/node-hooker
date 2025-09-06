@@ -5,11 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/ "null"), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html "null").
 
 
+## \[v2025.09.07.01\] - 2025-09-07
+
+### Added
+- **Browser Compatibility:** Implemented a Rollup build process to generate UMD bundles, allowing the library to be used directly in browsers.
+- **Production Builds:** Added a minified version (`.min.js`) for optimal performance in production environments.
+- **Build Scripts:** Included `npm run build` for a standard development build and `npm run build:minify` for a minified production build.
+
+
+
 ## \[v2025.09.07\] - 2025-09-07
 
 ### Updated & Changed
-
-    * Documentations only
+- ** Documentations only**
 
     
 ## \[v2025.09.06\] - 2025-09-06

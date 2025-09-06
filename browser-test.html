@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>node-hooker Browser Test</title>
+        <script>
+			// re-write - console.log function
+			function appendToConsole(type, args) {
+				const consoleDiv = document.getElementById('console');
+				const msg = Array.from(args).map(arg => {
+					if (typeof arg === 'object') {
+						try {
+							return JSON.stringify(arg);
+						} catch (e) {
+							return '[object]';
+						}
+					}
+					return String(arg);
+				}).join(' ');
+
+				const el = document.createElement('div');
+				let color = '#000';
+				switch(type) {
+					case 'warn': color = '#b58900'; break;
+					case 'error': color = '#dc322f'; break;
+					case 'info': color = '#268bd2'; break;
+				}
+				el.style.color = color;
+				el.style.fontFamily = 'monospace';
+				el.style.borderBottom = '1px solid #b1b1b1';
+				el.style.padding = '2px 4px';
+				el.style.margin = '4px 0px';
+				el.textContent = `[${type}] ${msg}`;
+				consoleDiv.appendChild(el);
+			}
+
+			['log', 'warn', 'error', 'info'].forEach(type => {
+				const orig = console[type];
+				console[type] = function(...args) {
+					appendToConsole(type, args);
+					orig.apply(console, args);
+				};
+			});
+		</script>
+    </head>
+    <body>
+        <h1>Check the console!</h1>
+
+		<h3>Codes:</h3>
+		<p>
+			<code>
+				<pre>
+
+&lt;script src="./dist/node-hooker.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    // The 'Hooker' global variable is now available!
+    console.log(Hooker);
+    
+    // You can now use it like you did in Node.js
+    Hooker.add_action('browser_event', function(msg){
+        console.log(`The browser event fired with message: "${msg}"`);
+    });
+
+    Hooker.do_action('browser_event', 'Hello from the browser!');
+    // Console output: The browser event fired with message: "Hello from the browser!"
+
+&lt;/script&gt;
+
+				</pre>
+			</code>
+		</p>
+
+		<h3>Console:</h3>
+		<div id="console" style="background:#d1d1d1; padding:4px 8px;border-radius: 4px; max-height:320px; overflow: auto;"></div>
+
+        <script src="./dist/node-hooker.umd.js"></script>
+        <script>
+            // The 'Hooker' global variable is now available!
+            console.log(Hooker);
+            
+            // You can now use it like you did in Node.js
+            Hooker.add_action('browser_event', function(msg){
+                console.log(`The browser event fired with message: "${msg}"`);
+            });
+
+            Hooker.do_action('browser_event', 'Hello from the browser!');
+            // Console output: The browser event fired with message: "Hello from the browser!"
+
+        </script>
+    </body>
+</html>

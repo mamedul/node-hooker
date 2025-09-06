@@ -1,8 +1,8 @@
 # node-hooker
 
-A powerful and flexible **hook system** for **Node.js**, inspired by the **WordPress actions** and filters API. This package provides a simple yet effective way to create extensible and decoupled architectures in your JavaScript applications.
+A powerful and flexible **hook system** for **Node.js**, inspired by the **WordPress actions and filters** API. This package provides a simple yet effective way to create extensible and decoupled architectures in your JavaScript applications.
 
-[![Version](https://img.shields.io/badge/Version-2025.09.07-blue.svg)](https://github.com/mamedul/node-hooker/)
+[![Version](https://img.shields.io/badge/Version-2025.09.07.01-blue.svg)](https://github.com/mamedul/node-hooker/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mamedul/node-hooker/blob/main/LICENSE) &nbsp;&nbsp; [![GitHub stars](https://img.shields.io/github/stars/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/stargazers) &nbsp;&nbsp; [![GitHub forks](https://img.shields.io/github/forks/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/network/members) &nbsp;&nbsp; [![GitHub watchers](https://img.shields.io/github/watchers/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/watchers) &nbsp;&nbsp; [![GitHub followers](https://img.shields.io/github/followers/mamedul?style=social)](https://github.com/mamedul?tab=followers)
 [![Hire Me](https://img.shields.io/badge/Hire%20Me-Available-brightgreen.svg)](http://mamedul.github.io/)
 
@@ -51,14 +51,13 @@ yarn add node-hooker
 
 ---
 
-✅ **Test**
+✅ **3. Test**
 
 After install- you can then run your tests from the terminal simply by using the command:
 
 ```bash
 npm test
 ```
-
 
 ## Quick Start
 
@@ -91,6 +90,77 @@ let title = 'Hello World';
 title = hooker.apply_filters('format_title', title);
 console.log(title); // Output: HELLO WORLD
 ```
+
+***OR***
+
+
+## Browser Usage (UMD)
+
+This library can be used directly in the browser. A UMD (Universal Module Definition) bundle is provided in the `dist` folder, which is also available via CDN.
+
+### 1\. Include via CDN
+
+You can add `node-hooker` to your project by including the following script tag. It's recommended to use the minified version for production.
+
+```html
+<!-- Regular -->
+<script src="https://cdn.jsdelivr.net/npm/node-hooker/dist/node-hooker.umd.min.js"></script>
+
+<!-- Minified -->
+<script src="https://cdn.jsdelivr.net/npm/node-hooker/dist/node-hooker.umd.js"></script>
+```
+
+### 2\. Example Usage
+
+Once included, the library will be available under the global variable `Hooker`.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>node-hooker Browser Example</title>
+</head>
+<body>
+    <h1>Check the console for output!</h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/node-hooker/dist/node-hooker.umd.min.js"></script>
+
+    <script>
+        // The library is now available on the window.Hooker object
+        console.log(Hooker);
+
+        // Add an action
+        Hooker.add_action('app_loaded', function() {
+            console.log('The application has loaded!');
+        });
+
+        // Trigger the action
+        Hooker.do_action('app_loaded');
+        // Console Output: The application has loaded!
+
+        // Use a filter
+        const originalText = "hello browser";
+        const filteredText = Hooker.apply_filters('format_text', originalText, (text) => text.toUpperCase());
+        
+        console.log(filteredText); 
+        // Note: Filters require a callback to be added first to have an effect.
+        // Let's add one now.
+        Hooker.add_filter('format_text', (text) => text.toUpperCase());
+        const trulyFilteredText = Hooker.apply_filters('format_text', originalText);
+        console.log(trulyFilteredText);
+        // Console Output: HELLO BROWSER
+    </script>
+</body>
+</html>
+```
+
+---
+
+## Preview (UMD)
+
+<iframe src="./browser-test.html" width="100%" height="256px" style="border: 32px solid #e0e0e0;outline:2px solid #c0c0c0;"></iframe>
+
+---
 
 ## API Reference
 
