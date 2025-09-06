@@ -2,7 +2,7 @@
 
 A powerful and flexible **hook system** for **Node.js**, inspired by the **WordPress actions and filters** API. This package provides a simple yet effective way to create extensible and decoupled architectures in your JavaScript applications.
 
-[![Version](https://img.shields.io/badge/Version-2025.09.07.01-blue.svg)](https://github.com/mamedul/node-hooker/)
+[![Version](https://img.shields.io/badge/Version-2025.09.072-blue.svg)](https://github.com/mamedul/node-hooker/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mamedul/node-hooker/blob/main/LICENSE) &nbsp;&nbsp; [![GitHub stars](https://img.shields.io/github/stars/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/stargazers) &nbsp;&nbsp; [![GitHub forks](https://img.shields.io/github/forks/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/network/members) &nbsp;&nbsp; [![GitHub watchers](https://img.shields.io/github/watchers/mamedul/node-hooker?style=social)](https://github.com/mamedul/node-hooker/watchers) &nbsp;&nbsp; [![GitHub followers](https://img.shields.io/github/followers/mamedul?style=social)](https://github.com/mamedul?tab=followers)
 [![Hire Me](https://img.shields.io/badge/Hire%20Me-Available-brightgreen.svg)](http://mamedul.github.io/)
 
@@ -224,6 +224,9 @@ node-hooker/
 ├── lib/
 │   └── Hooker.js
 │   └── Hook.js
+├── dist/
+│   └── node-hooker.umd.js
+│   └── node-hooker.umd.min.js
 ├── test.js
 ├── package.json
 ├── README.md
