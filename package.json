@@ -14,7 +14,7 @@
   "scripts": {
     "test": "node test.js",
     "build": "rollup -c",
-    "build:minify": "NODE_ENV=production rollup -c"
+    "build:minify": "cross-env NODE_ENV=production rollup -c"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "cross-env": "^10.0.0",
     "rollup": "^4.50.0"
   }
 }
