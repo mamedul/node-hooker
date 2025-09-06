@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/ "
 
 ### Updated & Changed
 - ** Documentations**
-- ** Preview**
+- ** Previews**
 
 
 ## \[v2025.09.07-1\] - 2025-09-07
